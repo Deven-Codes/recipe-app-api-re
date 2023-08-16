@@ -101,16 +101,16 @@ class RecipeViewSet(viewsets.ModelViewSet):
             OpenApiParameter(
                 'assigned_only',
                 OpenApiTypes.INT,
-                enum=[0,1],
+                enum=[0, 1],
                 description='Filter by items assigned to recipes.',
             ),
         ]
     )
 )
 class BaseRecipeAttrViewSet(mixins.DestroyModelMixin,
-                 mixins.UpdateModelMixin,
-                 mixins.ListModelMixin,
-                 viewsets.GenericViewSet):
+                            mixins.UpdateModelMixin,
+                            mixins.ListModelMixin,
+                            viewsets.GenericViewSet):
     """Base viewset for recipe attributes."""
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
